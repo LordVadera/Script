@@ -1,0 +1,12 @@
+#!name=强制通过MoniePoint人脸验证
+#!desc=强制通过MoniePoint人脸验证，进入App，完成修改个人信息和添加卡片等操作
+#!author=Lord Vader
+#!homepage=https://github.com/LordVadera/Script
+#!system=ios
+#!category=Lord Vader
+
+[MITM]
+hostname = %APPEND% api.smileidentity.com
+
+[Script]
+MPPlus = type=http-response,pattern=^https:\/\/api\.smileidentity\.com\/v1\/job_status,requires-body=1,max-size=0,binary-body-mode=0,debug=1,script-path=MPPlus.js
